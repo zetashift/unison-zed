@@ -1,0 +1,11 @@
+name = "Unison"
+grammar = "unison"
+path_suffixes = ["u"]
+line_comments = ["-- "]
+autoclose_before = "}])"
+brackets = [
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "\"", end = "\"", close = true, newline = true },
+]
