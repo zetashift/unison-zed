@@ -1,8 +1,10 @@
-id = "unison-zed"
-name = "unison-zed"
+id = "unison"
+name = "unison"
 description = "Unison support for Zed. The friendly programming language from the future with the editor from the future."
 version = "0.0.1"
 authors = ["zetashift <rskaraya@gmail.com>"]
+schema_version = 1
+repository = "https://github.dev/zetashift/unison-zed"
 
 [grammars.unison]
 repository = "https://github.com/kylegoetz/tree-sitter-unison"
