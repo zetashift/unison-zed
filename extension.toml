@@ -8,4 +8,4 @@ repository = "https://github.com/zetashift/unison-zed"
 
 [grammars.unison]
 repository = "https://github.com/kylegoetz/tree-sitter-unison"
-commit = "c0cea59e659dd02b69bb71ccffb0c29f96a88cf1"
+commit = "d2c875ad758885429a4d91f471a9590ab7c47aee"
