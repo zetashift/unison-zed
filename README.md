@@ -4,8 +4,7 @@
 
 ## TODOs
 
-- Add to extension store in Zed.
-- LSP support, currently blocked by: https://github.com/zed-industries/zed/issues/8498
+- Improve tree-sitter syntax highlighting in `languages/highlights.scm`.
 
 # Credits
 
