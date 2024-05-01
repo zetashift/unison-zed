@@ -1,7 +1,7 @@
 id = "unison"
 name = "unison"
 description = "Unison support for Zed. The friendly programming language from the future with the editor from the future."
-version = "0.0.1"
+version = "0.0.2"
 authors = ["zetashift <rskaraya@gmail.com>"]
 schema_version = 1
 repository = "https://github.com/zetashift/unison-zed"
