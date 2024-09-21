@@ -59,13 +59,14 @@
 (namespace) @namespace
 
 ;; Terms
-(type_signature term_name: (path)? @variable term_name: (wordy_id) @variable)
 (type_signature (wordy_id) @type)
-(type_signature (term_type(delayed(wordy_id))) @type)
+(type_signature (term_type(delayed(wordy_id))?) @type)
 
-(term_definition param: (wordy_id) @parameter)
+(term_declaration 
+  (type_signature term_name: (path)? @variable.special term_name: (wordy_id) @variable)?
+  (term_definition name: (path)? @variable.special name: (wordy_id) @variable param: (wordy_id)? @parameter))
 
-(function_application function_name: (path)? function_name: (wordy_id) @function)
+(function_application function_name: (path)? @variable.special function_name: (wordy_id) @function)
 
 ;; Punctuation
 [
