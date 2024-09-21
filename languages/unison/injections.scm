@@ -1,1 +1,1 @@
-((doc_block) @injection.content (#set! injection.language "markdown"))
+((doc_block) @content (#set! language "markdown"))
