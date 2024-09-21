@@ -8,19 +8,19 @@
 
 ## Language server
 
-Currently `ncat` is hardcoded as the language server, so you'll need to have `ncat` installed.
+Currently `nc` is hardcoded as the language server, so you'll need to have `nc` installed.
 
-For `apt` on Linux:
+### Linux
 
-```sh
-apt-get install -y netcat
-```
-
-For `brew` on Mac:
+For `apt` based distros:
 
 ```sh
-brew install nmap
+sudo apt install netcat
 ```
+
+### MacOS
+
+`nc` comes bundled with Mac, no extra steps required!
 
 # Credits
 
