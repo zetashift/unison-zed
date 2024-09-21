@@ -1,0 +1,11 @@
+[
+  {
+    "label": "launch ucm",
+    "command": "ucm",
+  },
+  {
+    "label": "run current file as transcript",
+    "command": "ucm",
+    "args": ["transcript", "$ZED_RELATIVE_FILE"],
+  }
+]

@@ -13,8 +13,8 @@ impl zed::Extension for UnisonExtension {
         worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
         let path = worktree
-            .which("ncat")
-            .ok_or_else(|| "ncat not found, please install ncat and make sure it's in your PATH".to_string())?;
+            .which("nc")
+            .ok_or_else(|| "nc not found, please install nc and make sure it's in your PATH".to_string())?;
 
         Ok(zed::Command {
             command: path,
