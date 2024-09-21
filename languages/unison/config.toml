@@ -7,6 +7,5 @@ brackets = [
     { start = "{", end = "}", close = true, newline = true },
     { start = "(", end = ")", close = true, newline = true },
     { start = "[", end = "]", close = true, newline = true },
-    { start = "{{", end = "}}", close = true, newline = true, not_in = ["literal_text"] },
     { start = "\"", end = "\"", close = true, newline = true, not_in = ["literal_text", "literal_char"] },
 ]
