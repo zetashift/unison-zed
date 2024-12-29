@@ -1,14 +1,14 @@
 id = "unison"
 name = "unison"
 description = "Unison support for Zed. The friendly programming language from the future with the editor from the future."
-version = "0.0.4"
+version = "0.0.5"
 authors = ["zetashift <rskaraya@gmail.com>"]
 schema_version = 1
 repository = "https://github.com/zetashift/unison-zed"
 
 [grammars.unison]
 repository = "https://github.com/kylegoetz/tree-sitter-unison"
-commit = "59d36a09282be7e4d3374854126590f3dcebee6e"
+commit = "3c97db76d3cdbd002dfba493620c2d5df2fd6fa9"
 
 [language_servers.unison]
 name = "Unison LSP"

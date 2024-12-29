@@ -2,7 +2,7 @@
 (comment) @comment
 (nat) @number
 (unit) @constant
-(literal_char) @string.special.symbol
+(literal_char) @string.special ;; Closest thing to a "string" of a special character
 (literal_text) @string
 (literal_boolean) @boolean
 
@@ -14,64 +14,77 @@
   (do)
   (ability)
   (where)
-] @keyword
-
-(kw_let) @function.definition
-(type_kw) @keyword
-(unique) @type.qualifier
-(structural) @type.qualifier
-("use") @keyword.control.import
-
-
-[
-  (type_constructor)
-] @constructor
-
-[
-  (operator)
-  (pipe)
-  (arrow_symbol)
-  (">")
-  (or)
-  (and)
-  (bang)
-] @operator
-
-[
+  (rewrite)
+  (kw_termlink)
+  (kw_typelink)
+  (handle)
   "if"
   "else"
   "then"
   (match)
   (with)
   (cases)
+  (unique)
 ] @keyword
+
+;; Operators
+[
+  (operator)
+  (pipe)
+  (arrow_symbol)
+  (or)
+  (and)
+  (bang)
+] @operator
 
 (blank_pattern) @variable.special
 
 ;; Types
-(record_field name: (wordy_id) @property type: (_) @type)
-(type_constructor (type_name (wordy_id) @constructor))
-(ability_declaration type_name: (wordy_id) @type type_arg: (wordy_id) @parameter)
-(effect (wordy_id) @variable.special) ;; NOTE: an effect is just like a type, but in signature we special case it
+[
+  (type_constructor)
+] @constructor
+
+(record_field
+  (field_name) @property
+  type: (regular_identifier) @type)
+(type_name) @type
+
+(type_declaration
+  (regular_identifier) @variant)
+
+(ability_name
+  (path)? @namespace
+  (regular_identifier) @type)
+
+(ability_declaration
+  (ability_name) @type
+  (type_argument) @parameter)
+
+(effect (regular_identifier) @variable.special) ;; NOTE: an effect is just like a type, but in signature we special case it
+
+(ctor (regular_identifier) @type)
 
 ;; Namespaces
 (path) @namespace
 (namespace) @namespace
 
 ;; Terms
-(type_signature (wordy_id) @type)
-(type_signature (term_type(delayed(wordy_id))?) @type)
+(type_signature
+  term_name: (path)? @namespace
+  term_name: (regular_identifier) @variable)
 
-(term_declaration 
-  (type_signature term_name: (path)? @variable.special term_name: (wordy_id) @variable)?
-  (term_definition name: (path)? @variable.special name: (wordy_id) @variable param: (wordy_id)? @parameter))
+(term_type) @type
 
-(function_application function_name: (path)? @variable.special function_name: (wordy_id) @function)
+
+(term_definition
+  name: (path)? @namespace
+  name: (regular_identifier) @variable)
 
 ;; Punctuation
 [
   (type_signature_colon)
   ":"
+  (comma)
 ] @punctuation.delimiter
 
 [
@@ -83,6 +96,8 @@
   "]"
 ] @punctuation.bracket
 
-(test_watch_expression (wordy_id) @label)
+(watch_expression) @label
+(test_watch_expression) @label
 
-(ERROR) @hint
+;; seems to cause more highlighting than desired in longer files, for now.
+;; (ERROR) @hint
