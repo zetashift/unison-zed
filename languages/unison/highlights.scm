@@ -25,6 +25,7 @@
   (with)
   (cases)
   (unique)
+  (structural)
 ] @keyword
 
 ;; Operators
@@ -38,6 +39,10 @@
 ] @operator
 
 (blank_pattern) @variable.special
+(pattern) @variable
+
+(doc_block) @comment.doc
+(use_clause) @keyword.import
 
 ;; Types
 [
@@ -47,6 +52,7 @@
 (record_field
   (field_name) @property
   type: (regular_identifier) @type)
+
 (type_name) @type
 
 (type_declaration
@@ -60,9 +66,12 @@
   (ability_name) @type
   (type_argument) @parameter)
 
-(effect (regular_identifier) @variable.special) ;; NOTE: an effect is just like a type, but in signature we special case it
+(constructor
+  (constructor_name) @constructor)
+(ctor (regular_identifier) @constructor)
+(constructor type: (regular_identifier) @type)
 
-(ctor (regular_identifier) @type)
+(effect (regular_identifier) @type.special) ;; NOTE: an effect is just like a type, but in signature we special case it
 
 ;; Namespaces
 (path) @namespace
@@ -70,15 +79,19 @@
 
 ;; Terms
 (type_signature
-  term_name: (path)? @namespace
+  term_name: (path) @namespace
+  term_name: (regular_identifier) @variable)
+
+(type_signature
   term_name: (regular_identifier) @variable)
 
 (term_type) @type
 
-
 (term_definition
-  name: (path)? @namespace
-  name: (regular_identifier) @variable)
+  name: (path) @namespace)
+
+(term_definition name: (regular_identifier) @variable)
+(term_definition param: (regular_identifier) @parameter)
 
 ;; Punctuation
 [
