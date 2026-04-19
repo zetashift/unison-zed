@@ -12,9 +12,9 @@ impl zed::Extension for UnisonExtension {
         _config: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
-        let path = worktree
-            .which("nc")
-            .ok_or_else(|| "nc not found, please install nc and make sure it's in your PATH".to_string())?;
+        let path = worktree.which("nc").ok_or_else(|| {
+            "nc not found, please install nc and make sure it's in your PATH".to_string()
+        })?;
 
         Ok(zed::Command {
             command: path,
