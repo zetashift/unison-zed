@@ -26,6 +26,7 @@
   (cases)
   (unique)
   (structural)
+  (kw_namespace)
 ] @keyword
 
 ;; Operators
@@ -74,7 +75,7 @@
 
 ;; Namespaces
 (path) @namespace
-(namespace) @namespace
+(namespace (regular_identifier) @namespace)
 
 ;; Terms
 (type_signature
