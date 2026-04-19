@@ -68,7 +68,6 @@
 
 (constructor
   (constructor_name) @constructor)
-(ctor (regular_identifier) @constructor)
 (constructor type: (regular_identifier) @type)
 
 (effect (regular_identifier) @type.special) ;; NOTE: an effect is just like a type, but in signature we special case it
